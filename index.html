@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 <meta name="google-site-verification" content="UDjt07289iAQOEcAqMDo1rqu6RyoFxvUpFt0pq6RoAk" />
-<link rel="icon" href="data:," />
+<link rel="icon" type="image/png" sizes="32x32" href="img001.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="img002.png" />
+<link rel="shortcut icon" type="image/png" href="img002.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="img003.png" />
+<meta name="theme-color" content="#101623" />
 <title>Henry AN Japan — Japanese Auction Cars, Exported Worldwide</title>
 <meta name="description" content="AN International Japan — licensed member of Japan's auto auctions. Henry sources cars, trucks and machinery from USS, TAA, CAA, JU, ARAI and 120+ auction venues and ships worldwide." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -346,9 +350,158 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
   .page.active{animation:none}
   html{scroll-behavior:auto}
 }
+
+/* ================= v8 UPGRADE: logo, motion, graphics, clickability ================= */
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#scrollProgress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:200;box-shadow:0 1px 6px rgba(200,16,46,.5)}
+
+/* --- dark navy header carrying the official logo --- */
+header.site{background:linear-gradient(120deg,#0b1322,#182741 55%,#0b1322);border-bottom:2px solid var(--accent);box-shadow:0 8px 26px rgba(5,10,20,.35)}
+.brand{gap:14px}
+.brand-tag{white-space:nowrap;line-height:1.15}
+.brand-tag small{display:block;white-space:nowrap}
+@media(max-width:1520px){header.site .wrap{flex-wrap:wrap}nav.main{order:3;width:100%;margin-left:0;padding-top:2px}}
+.brand-logo{height:50px;width:auto;max-width:176px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.45));transition:transform .25s ease}
+.brand:hover .brand-logo{transform:scale(1.03)}
+.brand-tag{color:#e8eef8;font-family:"Barlow Condensed";font-size:1.02rem;letter-spacing:.04em;line-height:1.15;white-space:nowrap}
+.brand-tag small{display:block;color:#93a5c2;font-family:"Barlow";font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;margin-top:2px}
+nav.main button{color:#c3d0e4;transition:all .2s ease}
+nav.main button:hover{color:#fff;background:rgba(255,255,255,.10);transform:translateY(-1px)}
+nav.main button:active{transform:scale(.95)}
+nav.main button.active{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(200,16,46,.45)}
+.foot-logo{height:58px;width:auto;max-width:230px;object-fit:contain;margin-bottom:12px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
+.contact-logo{height:54px;width:auto;max-width:215px;object-fit:contain;margin-bottom:14px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
+@media(max-width:860px){
+  .brand-logo{height:42px;max-width:164px}
+  .brand-tag{display:none}
+  nav.main button{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#d7e1f0}
+  nav.main button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .foot-logo{height:50px}
+  .contact-logo{height:46px}
+}
+
+/* --- hero motion & graphics --- */
+.hero .bgimg{animation:kenburns 28s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.13) translateX(-1.6%)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1.5px);background-size:22px 22px;opacity:.32;pointer-events:none}
+.hero h1{text-shadow:0 3px 22px rgba(0,0,0,.45)}
+.hero .kicker{animation:kickerGlow 3.2s ease-in-out infinite}
+@keyframes kickerGlow{0%,100%{box-shadow:0 0 0 rgba(255,77,103,0)}50%{box-shadow:0 0 18px rgba(255,77,103,.45)}}
+.hero-stats>div{border-radius:10px;padding-left:12px;margin-left:-12px;transition:background .25s ease,transform .25s ease}
+.hero-stats>div[data-goto]{cursor:pointer}
+.hero-stats>div[data-goto]:hover{background:rgba(255,255,255,.08);transform:translateY(-3px)}
+@media(max-width:640px){.hero-stats>div{margin-left:0;padding-left:10px}}
+
+/* --- buttons: lift, shine sweep, press --- */
+.btn{position:relative;overflow:hidden;transition:transform .18s ease,box-shadow .25s ease,background .25s ease;box-shadow:0 4px 14px rgba(16,22,35,.15)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(16,22,35,.22)}
+.btn:active{transform:translateY(0) scale(.97)}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
+.btn:hover::after{left:120%}
+.btn-red{background:linear-gradient(120deg,#d81230,#a50d27)}
+.btn-wa{background:linear-gradient(120deg,#22bd5f,#178a43)}
+.mini-wa,.wa-head{transition:transform .18s ease,box-shadow .25s ease,background .25s ease;box-shadow:0 3px 10px rgba(23,138,67,.35)}
+.mini-wa:hover,.wa-head:hover{transform:translateY(-2px)}
+.mini-wa:active,.wa-head:active{transform:scale(.96)}
+.big-wa{transition:transform .2s ease,box-shadow .25s ease,background .25s ease}
+.big-wa:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.3)}
+.big-wa:active{transform:scale(.98)}
+
+/* --- cards: accent line, lift, image zoom --- */
+.card{position:relative;transition:transform .3s ease,box-shadow .3s ease}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .45s ease;z-index:3}
+.card:hover::before{transform:scaleX(1)}
+.card[data-goto]{cursor:pointer}
+.card[data-goto]:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(16,22,35,.17)}
+.card[data-goto]:active{transform:scale(.99)}
+.car-card .imgwrap{overflow:hidden}
+.car-card img.ph{transition:transform .6s cubic-bezier(.22,.8,.32,1)}
+.car-card:hover img.ph{transform:scale(1.07)}
+.policy-card{cursor:pointer}
+.policy-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(16,22,35,.15)}
+.policy-num{transition:all .25s ease}
+.policy-card:hover .policy-num{background:var(--navy);transform:scale(1.1) rotate(-5deg)}
+.policy-link,.auction-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-weight:700;color:var(--accent-ink);text-decoration:none;font-size:.95rem}
+.policy-link:hover,.auction-link:hover{text-decoration:underline}
+.country-card{cursor:pointer}
+.country-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(16,22,35,.17)}
+.country-card .port{font-family:"Barlow Condensed";font-size:1.05rem;letter-spacing:.05em;color:var(--accent-ink);text-transform:uppercase}
+.country-card dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:12px 0 0;font-size:.93rem}
+.country-card dt{color:var(--ink2);font-weight:600}
+.country-card dd{margin:0;font-weight:600}
+
+/* --- steps, chips, marquee, notes --- */
+.step{border-radius:10px;transition:background .25s ease}
+.step[data-goto]{cursor:pointer}
+.step[data-goto]:hover{background:var(--bg2)}
+.step .num{transition:transform .25s ease,background .25s ease}
+.step:hover .num{transform:scale(1.12) rotate(-5deg);background:var(--accent)}
+.chip{transition:all .2s ease}
+.chip.clickable{cursor:pointer}
+.chip.clickable:hover{background:var(--navy);color:#fff;border-color:var(--navy);transform:translateY(-2px)}
+.chip.clickable:active{transform:scale(.96)}
+.marquee{cursor:pointer}
+.marquee:hover .track{animation-play-state:paused}
+.note[data-goto]{cursor:pointer;transition:transform .25s ease,box-shadow .25s ease}
+.note[data-goto]:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.license[data-goto],.cta-strip[data-goto]{cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.license[data-goto]:hover,.cta-strip[data-goto]:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(16,22,35,.25)}
+
+/* --- tables, contact rows, forms --- */
+table.data tbody tr{transition:background .2s ease}
+table.data tbody tr.clickable-row{cursor:pointer}
+table.data tbody tr.clickable-row:hover td{background:rgba(200,16,46,.06)}
+.kv dt.clickable,.kv dd.clickable{cursor:pointer}
+.kv dd.clickable:hover a{text-decoration:underline;color:var(--accent-ink)}
+.field input,.field select,.field textarea{transition:border-color .2s ease,box-shadow .2s ease}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,16,46,.18)}
+.form-card.flash{animation:flashRing 1.4s ease}
+@keyframes flashRing{0%,100%{box-shadow:var(--shadow)}25%{box-shadow:0 0 0 4px rgba(200,16,46,.45)}}
+.filters button{transition:all .2s ease}
+.filters button:hover{transform:translateY(-2px);border-color:var(--navy);color:var(--ink)}
+.filters button:active{transform:scale(.95)}
+
+/* --- section heads, reveal, gallery, floats --- */
+.sec-head .kicker{display:inline-flex;align-items:center;gap:10px}
+.sec-head .kicker::before{content:"";width:26px;height:2px;background:var(--accent);flex-shrink:0}
+.reveal{transition:opacity .7s cubic-bezier(.22,.8,.32,1),transform .7s cubic-bezier(.22,.8,.32,1)}
+.gal-main img{transition:transform .5s ease}
+.gal-main:hover img{transform:scale(1.03)}
+.gal-thumbs button{transition:transform .2s ease,border-color .2s ease}
+.gal-thumbs button:hover{transform:translateY(-3px)}
+.float-wa{transition:transform .2s ease,background .25s ease}
+.float-wa:hover{transform:scale(1.09)}
+.float-wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(31,174,85,.55);animation:waPulse 2.4s ease-out infinite;pointer-events:none}
+@keyframes waPulse{0%{transform:scale(1);opacity:.85}70%{transform:scale(1.5);opacity:0}100%{transform:scale(1.5);opacity:0}}
+#toTop{position:fixed;left:18px;bottom:18px;z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:var(--navy);color:#fff;display:grid;place-items:center;cursor:pointer;opacity:.92;pointer-events:auto;transition:all .3s ease;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+#toTop.show{opacity:1;pointer-events:auto;transform:none}
+#toTop:hover{background:var(--accent);transform:translateY(-3px)}
+#toTop:active{transform:scale(.94)}
+@media(max-width:640px){#toTop{left:14px;bottom:calc(14px + env(safe-area-inset-bottom));width:42px;height:42px}}
+
+/* --- export flow strip (How to Buy) --- */
+.flow-strip{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:0 0 34px}
+.flow-strip button{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:600;padding:11px 15px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:9px;transition:all .2s ease;box-shadow:var(--shadow)}
+.flow-strip button:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent-ink)}
+.flow-strip button:active{transform:scale(.96)}
+.flow-strip button b{font-family:"Barlow Condensed";background:var(--navy);color:#fff;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:.95rem;flex-shrink:0}
+.flow-strip .arr{align-self:center;color:var(--ink2);font-weight:700}
+@media(max-width:640px){.flow-strip .arr{display:none}.flow-strip button{flex:1 1 44%;justify-content:flex-start}}
+
+@media (prefers-reduced-motion: reduce){
+  .hero .bgimg{animation:none}
+  .hero .kicker{animation:none}
+  .float-wa::after{animation:none}
+  .form-card.flash{animation:none}
+  .btn::after{display:none}
+  .card,.btn,.step .num,.chip,.car-card img.ph{transition:none}
+}
 </style>
 </head>
 <body>
+
+<div id="scrollProgress" aria-hidden="true"></div>
 
 <div class="topbar">
   <div class="wrap">
@@ -359,9 +512,9 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#" data-goto="home">
-      <span class="mark">AN</span>
-      <span><b>AN INTERNATIONAL</b><small>Japan · Henry — your auction agent</small></span>
+    <a class="brand" href="#" data-goto="home" aria-label="AN International Japan — go to home page">
+      <img class="brand-logo" src="img004.png" alt="AN International Japan — Trust and Quality" width="884" height="247" />
+      <span class="brand-tag">Henry — your auction agent<small>Ichinomiya · Aichi · Japan</small></span>
     </a>
     <nav class="main" aria-label="Pages">
       <button data-goto="home" class="active">Home</button>
@@ -380,7 +533,7 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
 <!-- ============================ HOME ============================ -->
 <main class="page active" id="page-home">
   <section class="hero">
-    <img class="bgimg" src="img001.jpg" alt="Rows of cars waiting at a Japanese auto auction yard" />
+    <img class="bgimg" src="img005.jpg" alt="Rows of cars waiting at a Japanese auto auction yard" />
     <div class="wrap">
       <span class="kicker">Licensed Japanese auction member</span>
       <h1>Every Japanese auction. <span class="red">One agent.</span> Your name on the car.</h1>
@@ -404,7 +557,7 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
 
   <section class="block">
     <div class="wrap">
-      <div class="license reveal">
+      <div class="license" data-goto="auctions" tabindex="0" role="link" aria-label="See the auctions page">
         <h2>Licensed auction membership — our biggest strength</h2>
         <p>Japan's 120+ auto auctions are closed to the public and to foreign buyers. Membership is reserved for licensed Japanese dealers and exporters. AN International Japan holds the licensed dealer/exporter memberships to buy and collect vehicles from the auction networks across Japan — USS, TAA, CAA, JU, ARAI, HAA Kobe, Aucnet and more. When you buy through Henry, you are not paying a chain of middlemen: you are bidding through the licensed member itself.</p>
         <div class="pitch"><small>Send this to any buyer — Henry's pitch</small>
@@ -466,7 +619,7 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
         <div class="card reveal"><div class="body"><h3>Tell Your Demand</h3><p>Model, year, budget, port — fill the 2-minute demand form. You get instant model suggestions on screen, plus Henry's personal shortlist on WhatsApp.</p><p><button class="btn btn-red" data-goto="demand">State your demand →</button></p></div></div>
         <div class="card reveal"><div class="body"><h3>Our Policies</h3><p>Payment, bidding deposit, inspection, shipping, cancellation &amp; refund, documents and condition — all policies in one place, in plain language.</p><p><button class="btn btn-dark" data-goto="policies">Read all policies →</button></p></div></div>
       </div>
-      <div class="cta-strip reveal" style="margin-top:22px">
+      <div class="cta-strip reveal" style="margin-top:22px" data-goto="demand" tabindex="0" role="link" aria-label="Go to the demand form">
         <h3>Not sure which car fits your budget?</h3>
         <p>Use the demand form — pick your country, budget and vehicle type, and the page instantly suggests the models dealers in your market order most. Then send the same demand to Henry in one tap.</p>
         <button class="btn btn-wa" data-goto="demand">Get my suggestions →</button>
@@ -496,13 +649,13 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
       <div class="grid c3" id="carGrid"></div>
 
       <div style="margin-top:44px" class="grid c2">
-        <div class="card reveal"><div class="body">
+        <div class="card" data-goto="auctions" tabindex="0" role="link" aria-label="See the auctions page for more on grades"><div class="body">
           <h3>How to read an auction grade</h3>
           <p>Every auction car is inspected by an inspector employed by the auction house — not the seller — who writes the auction sheet: overall grade, interior grade, mileage, equipment, accident/repair history and a body diagram marking scratches, dents and replaced panels.</p>
           <p><b>5 / 4.5</b> — excellent to very clean · <b>4</b> — good, normal light marks · <b>3.5</b> — average, noticeable wear · <b>3</b> — rough · <b>R / RA</b> — accident-repaired, disclosed on the sheet.</p>
           <p>Henry translates the full sheet for you before you bid — including the handwritten Japanese comments most buyers never see.</p>
         </div></div>
-        <div class="card reveal"><div class="body">
+        <div class="card" data-goto="demand" tabindex="0" role="link" aria-label="Tell Henry your demand"><div class="body">
           <h3>Can't see your car?</h3>
           <p>With ~150,000 cars auctioned every week, almost anything sold in Japan is reachable: kei cars, hybrids, luxury SUVs, sports and JDM classics, trucks and heavy machinery.</p>
           <p>Send Henry the model, year range, colour and budget — he will search the coming week's sales at USS, TAA, CAA, JU, ARAI, HAA Kobe and the online auctions and send you real candidates with sheets and photos.</p>
@@ -522,7 +675,7 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
         <h2>120+ auction houses. We are a member.</h2>
         <p>Japanese auto auctions are the wholesale heart of the used-car world: 120+ venues, roughly 150,000 vehicles sold every week, around 7 million a year. They are members-only — a licensed Japanese business, deposits and standing with each auction group are required. That membership is exactly what AN International holds, and what you buy through.</p>
       </div>
-      <img src="img001.jpg" alt="Auction yard in Japan with long rows of inspected cars" style="border-radius:16px;width:100%;height:340px;object-fit:cover" />
+      <img src="img005.jpg" alt="Auction yard in Japan with long rows of inspected cars" style="border-radius:16px;width:100%;height:340px;object-fit:cover" />
       <p class="src">An auction yard in Japan — every car in the rows carries an inspection sheet from the auction house's own inspector.</p>
 
       <div class="grid c3" style="margin-top:34px" id="auctionGrid"></div>
@@ -543,7 +696,7 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
       </table>
       <p class="src">Sources: Japan Overseas Corporation auction guide; JapanAuc auction explainer — see <button data-goto="company" style="background:none;border:0;color:inherit;font:inherit;text-decoration:underline;cursor:pointer;padding:0">references on the Company page</button>.</p>
 
-      <div class="note reveal" style="margin-top:26px"><b>The Aichi advantage:</b> AN International is based in Aichi — home to USS Nagoya, CAA in Toyota City and Nagoya port. Inland transport from our local auctions to Nagoya port typically runs ¥12,000–¥18,000 per car, against ¥45,000–¥65,000 from far regions like Hokkaido. That saving goes straight into your landed price.</div>
+      <div class="note reveal" style="margin-top:26px" data-goto="company" tabindex="0" role="link" aria-label="See company details"><b>The Aichi advantage:</b> AN International is based in Aichi — home to USS Nagoya, CAA in Toyota City and Nagoya port. Inland transport from our local auctions to Nagoya port typically runs ¥12,000–¥18,000 per car, against ¥45,000–¥65,000 from far regions like Hokkaido. That saving goes straight into your landed price.</div>
 
       <div class="sec-head" style="margin-top:56px">
         <span class="kicker">Watch</span>
@@ -572,6 +725,16 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
         <span class="kicker">Buying guide</span>
         <h2>How to buy from Japanese auctions</h2>
         <p>The full process, with the money side explained honestly — deposits, price types, documents and shipping — the same way the big exporters do it.</p>
+      </div>
+      <p style="font-weight:700;margin:0 0 10px">The whole journey at a glance — tap any stage to jump to it:</p>
+      <div class="flow-strip" aria-label="Export process at a glance">
+        <button data-goto="demand"><b>1</b> Tell your requirement</button><span class="arr">→</span>
+        <button data-goto="policies"><b>2</b> Bidding deposit</button><span class="arr">→</span>
+        <button data-goto="cars"><b>3</b> Choose car &amp; max bid</button><span class="arr">→</span>
+        <button data-goto="policies"><b>4</b> Pay balance by TT</button><span class="arr">→</span>
+        <button data-goto="policies"><b>5</b> Inspection &amp; documents</button><span class="arr">→</span>
+        <button data-goto="company"><b>6</b> RoRo / container shipping</button><span class="arr">→</span>
+        <button data-goto="company"><b>7</b> Clear &amp; collect at your port</button>
       </div>
       <div class="steps">
         <div class="step"><div class="num">1</div><div><h3>Register &amp; tell us your requirement</h3><p>Message Henry on WhatsApp or email with the model, year, budget and destination port. No registration fee. Henry confirms what is realistic at current auction prices before you spend anything.</p></div></div>
@@ -606,12 +769,12 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
           <p><b>Container</b> suits high-value cars, non-runners, or dealers consolidating 3–4 cars in a shared 40ft container — better protection, higher single-car cost.</p>
         </div></div>
         <div class="reveal">
-          <img src="img002.jpg" alt="A car being driven up the ramp of a RoRo vehicle carrier at a Japanese port" style="border-radius:14px;width:100%;height:100%;object-fit:cover;min-height:280px" />
+          <img src="img006.jpg" alt="A car being driven up the ramp of a RoRo vehicle carrier at a Japanese port" style="border-radius:14px;width:100%;height:100%;object-fit:cover;min-height:280px" />
         </div>
       </div>
       <p class="src">A vehicle boarding a RoRo carrier in Japan — the way most exported cars travel. Process, fee and document details on this page follow published exporter practice (SAT Japan FAQ; Coral Net; Japan Car Direct; CSO Japan) — full references on the Company page.</p>
 
-      <div class="note reveal" style="margin-top:26px"><b>Safety first:</b> only ever transfer to the bank account shown on your official invoice, in the company name. Henry will happily verify everything on a video call — showing you the office, the yard and your car — before you send a yen.</div>
+      <div class="note reveal" style="margin-top:26px" data-goto="policies" tabindex="0" role="link" aria-label="Read the full policies"><b>Safety first:</b> only ever transfer to the bank account shown on your official invoice, in the company name. Henry will happily verify everything on a video call — showing you the office, the yard and your car — before you send a yen.</div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px">
         <button class="btn btn-dark" data-goto="policies">Read the full policies →</button>
         <button class="btn btn-red" data-goto="demand">Ready? Tell us your demand →</button>
@@ -637,6 +800,17 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
       </div>
 
       <div class="sec-head" style="margin-top:56px">
+        <span class="kicker">Why buyers trust this market</span>
+        <h2>Japan's export system, in three facts</h2>
+        <p>Official market data — the same published series used across this page (sources on the Company page).</p>
+      </div>
+      <div class="grid c3">
+        <div class="card" data-goto="auctions" tabindex="0" role="link" aria-label="See how the auctions work"><div class="body"><h3>A record market</h3><p>Japan exported roughly <b>1.6–1.7 million used vehicles in 2025</b> — a record year (1,640,727 in the JADA series; 1,708,604 in the JUMVEA series, which counts cars priced ¥200,000 and above). Supply is never the problem — choosing the right car is.</p><span class="auction-link">Where the cars come from →</span></div></div>
+        <div class="card" data-goto="company" tabindex="0" role="link" aria-label="See sources and company details"><div class="body"><h3>An organised trade</h3><p>The industry has an official association: <b>JUMVEA</b> — the Japan Used Motor Vehicle Exporters Association, approved by Japan's Ministry of Economy, Trade and Industry (METI), with <b>250+ member exporters</b> and a Safe Trade scheme that holds buyer payments until the vehicle ships.</p><span class="auction-link">See our sources →</span></div></div>
+        <div class="card" data-goto="policies" tabindex="0" role="link" aria-label="Read the inspection policy"><div class="body"><h3>Inspected by the house, not the seller</h3><p>Every auction car is graded by an <b>inspector employed by the auction house</b> — overall grade, interior grade, mileage, repair history and a marked body diagram — before it is sold. That independent sheet is what Henry translates for you before you bid.</p><span class="auction-link">Read the inspection policy →</span></div></div>
+      </div>
+
+      <div class="sec-head" style="margin-top:56px">
         <span class="kicker">Who buys the most</span>
         <h2>Top buyer countries, 2025</h2>
         <p>Where Japan's used cars actually went in 2025 (JUMVEA destination statistics). The UAE is largely a re-export hub — most of its cars move on to Africa, Central Asia and neighbouring markets, so its buyers are mainly traders and dealers. Africa as a region took about a quarter of all passenger-car exports.</p>
@@ -657,14 +831,33 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
       </table>
       <p class="src">Note: a second published series (Provide Cars, JUMVEA-based) puts the UAE at 252,637 and Russia at 186,584 for 2025 — totals differ slightly by counting method; the ranking is the same. In early 2026, Middle East shipping disruption pushed UAE volumes down sharply, with Russia first, then Tanzania, New Zealand, Chile and Mongolia.</p>
 
+      <div class="sec-head" style="margin-top:56px">
+        <span class="kicker">We ship to your country</span>
+        <h2>Your country, your port, your rules</h2>
+        <p>The 2025 top buyer countries (JUMVEA destination statistics) with the ports cars actually land at, the models those markets order most, and the headline import rule to know before you bid — plus Pakistan, one of our focus markets. <b>Tap your country</b> and the demand form opens with your country and port already filled in.</p>
+      </div>
+      <div class="grid c3" id="countryGrid">
+        <article class="card country-card reveal" data-country-card="UAE" data-port="Jebel Ali" tabindex="0" role="link" aria-label="Ask Henry about shipping to UAE"><div class="body"><h3>UAE</h3><span class="port">Port: Jebel Ali</span><dl><dt>2025 cars</dt><dd>253,897</dd><dt>Popular</dt><dd>Land Cruiser 300, luxury SUVs</dd><dt>Good to know</dt><dd>Re-export hub — most cars move on to Africa &amp; Central Asia, so the final market's rules apply there</dd></dl><span class="auction-link">Ask Henry for UAE →</span></div></article>
+        <article class="card country-card reveal" data-country-card="Russia" data-port="Vladivostok" tabindex="0" role="link" aria-label="Ask Henry about shipping to Russia"><div class="body"><h3>Russia</h3><span class="port">Port: Vladivostok</span><dl><dt>2025 cars</dt><dd>186,583</dd><dt>Popular</dt><dd>Prius &amp; Honda hybrids, Land Cruiser</dd><dt>Good to know</dt><dd>Shipping and payment routes change — ask Henry for the current route before bidding</dd></dl><span class="auction-link">Ask Henry for Russia →</span></div></article>
+        <article class="card country-card reveal" data-country-card="Tanzania" data-port="Dar es Salaam" tabindex="0" role="link" aria-label="Ask Henry about shipping to Tanzania"><div class="body"><h3>Tanzania</h3><span class="port">Port: Dar es Salaam</span><dl><dt>2025 cars</dt><dd>119,036</dd><dt>Popular</dt><dd>Corolla Fielder, Hiace, hatchbacks</dd><dt>Good to know</dt><dd>EAA pre-shipment inspection is required — we arrange it in Japan</dd></dl><span class="auction-link">Ask Henry for Tanzania →</span></div></article>
+        <article class="card country-card reveal" data-country-card="Chile" data-port="Iquique" tabindex="0" role="link" aria-label="Ask Henry about shipping to Chile"><div class="body"><h3>Chile</h3><span class="port">Port: Iquique</span><dl><dt>2025 cars</dt><dd>83,523</dd><dt>Popular</dt><dd>Compact cars &amp; SUVs</dd><dt>Good to know</dt><dd>Most Japanese cars enter through the Iquique free-trade zone</dd></dl><span class="auction-link">Ask Henry for Chile →</span></div></article>
+        <article class="card country-card reveal" data-country-card="Kenya" data-port="Mombasa" tabindex="0" role="link" aria-label="Ask Henry about shipping to Kenya"><div class="body"><h3>Kenya</h3><span class="port">Port: Mombasa</span><dl><dt>2025 cars</dt><dd>77,286</dd><dt>Popular</dt><dd>Fielder, CX-5 diesel, Fit</dd><dt>Good to know</dt><dd>Cars must be under 8 years old and pass QISJ pre-shipment inspection — handled for you</dd></dl><span class="auction-link">Ask Henry for Kenya →</span></div></article>
+        <article class="card country-card reveal" data-country-card="New Zealand" data-port="Auckland" tabindex="0" role="link" aria-label="Ask Henry about shipping to New Zealand"><div class="body"><h3>New Zealand</h3><span class="port">Ports: Auckland · Wellington · Lyttelton</span><dl><dt>2025 cars</dt><dd>71,633</dd><dt>Popular</dt><dd>Aqua, Jimny, hybrids &amp; EVs</dd><dt>Good to know</dt><dd>NZ entry certification applies — safety and emissions standards must be met</dd></dl><span class="auction-link">Ask Henry for New Zealand →</span></div></article>
+        <article class="card country-card reveal" data-country-card="Mongolia" data-port="Via China/Russia land routes" tabindex="0" role="link" aria-label="Ask Henry about shipping to Mongolia"><div class="body"><h3>Mongolia</h3><span class="port">Via China / Russia land routes</span><dl><dt>2025 cars</dt><dd>66,469</dd><dt>Popular</dt><dd>Prius E-Four AWD, hybrids</dd><dt>Good to know</dt><dd>Hybrids dominate — favoured by local tax rules; AWD versions suit the winter</dd></dl><span class="auction-link">Ask Henry for Mongolia →</span></div></article>
+        <article class="card country-card reveal" data-country-card="South Africa" data-port="Durban" tabindex="0" role="link" aria-label="Ask Henry about shipping to South Africa"><div class="body"><h3>South Africa</h3><span class="port">Port: Durban</span><dl><dt>2025 cars</dt><dd>64,555</dd><dt>Popular</dt><dd>Hatchbacks &amp; SUVs</dd><dt>Good to know</dt><dd>Much of the volume is transit trade onward to neighbouring countries</dd></dl><span class="auction-link">Ask Henry for South Africa →</span></div></article>
+        <article class="card country-card reveal" data-country-card="Sri Lanka" data-port="Colombo" tabindex="0" role="link" aria-label="Ask Henry about shipping to Sri Lanka"><div class="body"><h3>Sri Lanka</h3><span class="port">Ports: Colombo · Hambantota</span><dl><dt>2025 cars</dt><dd>62,335</dd><dt>Popular</dt><dd>Aqua, Vezel, hybrids</dd><dt>Good to know</dt><dd>Import rules change with government policy — confirm the current rules before you bid</dd></dl><span class="auction-link">Ask Henry for Sri Lanka →</span></div></article>
+        <article class="card country-card reveal" data-country-card="Pakistan" data-port="Karachi" tabindex="0" role="link" aria-label="Ask Henry about shipping to Pakistan"><div class="body"><h3>Pakistan <span class="chip tag-red" style="vertical-align:middle">AN focus market</span></h3><span class="port">Port: Karachi</span><dl><dt>2025 cars</dt><dd>Focus market</dd><dt>Popular</dt><dd>Aqua, Prius, kei cars</dd><dt>Good to know</dt><dd>Commercial imports effectively favour cars up to 3 years old under the transfer-of-residence, gift and personal-baggage schemes</dd></dl><span class="auction-link">Ask Henry for Pakistan →</span></div></article>
+      </div>
+      <p class="src">2025 volumes: JUMVEA destination statistics (official market data, via the sources listed on the Company page). Ports and popular models are the commonly used ones for each market; import-rule notes are headline summaries only — Henry confirms the current rules for your exact port and car before you bid.</p>
+
       <div class="grid c2" style="margin-top:36px">
-        <div class="card reveal"><div class="body">
+        <div class="card" data-goto="company" tabindex="0" role="link" aria-label="See company and contact details"><div class="body">
           <h3>Markets AN International already serves</h3>
           <p>From our own homepage: Ireland, United Kingdom, Jamaica, Cyprus, Kenya, Mongolia, Australia, Pakistan and Malaysia — plus worldwide shipping on request.</p>
           <p><b>Pakistan note:</b> commercial import rules effectively favour cars up to 3 years old under the transfer-of-residence / gift / personal-baggage schemes; demand concentrates on hybrids and kei cars — Toyota Aqua, Prius and Daihatsu Mira are the classic choices.</p>
           <p><b>Kenya note:</b> cars must be under 8 years old and pass QISJ pre-shipment inspection — handled for you in step 6 of our process.</p>
         </div></div>
-        <div class="card reveal"><div class="body">
+        <div class="card" data-goto="auctions" tabindex="0" role="link" aria-label="See the auctions page"><div class="body">
           <h3>The auction side, by the week</h3>
           <p>Where do 1.6 million export cars come from? The same auctions you buy from:</p>
           <p><b>USS group</b> — 55,000+ cars a week across 18+ halls · <b>All networks together</b> — ~150,000 cars a week, ~7 million a year · <b>USS Tokyo alone</b> — 14,000+ cars every Thursday.</p>
@@ -693,12 +886,12 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
             <dt>Operating since</dt><dd>2009</dd>
             <dt>Business</dt><dd>Used cars, trucks &amp; heavy machinery export; auction sourcing to customer order</dd>
             <dt>Auction access</dt><dd>Licensed dealer/exporter membership — buy &amp; collect from auction houses across Japan (USS, TAA, CAA, JU, ARAI, HAA Kobe, Aucnet…)</dd>
-            <dt>Company phone</dt><dd><a href="tel:+818045464242">+81 80-4546-4242</a></dd>
             <dt>Main website</dt><dd><a href="https://aninternationaljapan.com/" target="_blank" rel="noopener">aninternationaljapan.com</a></dd>
             <dt>Delivery markets</dt><dd>Ireland, United Kingdom, Jamaica, Cyprus, Kenya, Mongolia, Australia, Pakistan, Malaysia &amp; worldwide</dd>
           </dl>
         </div></div>
         <div class="contact-card reveal">
+          <img class="contact-logo" src="img004.png" alt="AN International Japan logo" width="884" height="247" />
           <h3>Talk to Henry — your agent</h3>
           <p style="color:#c3cedd;margin:0">Dealers and buyers worldwide know AN International's agent as <b style="color:#fff">Henry</b>. One person, start to finish: sourcing, bidding, inspection updates, documents and shipping news — on your WhatsApp.</p>
           <a class="big-wa" href="https://wa.me/923715130073?text=Hello%20Henry%2C%20I%20am%20interested%20in%20buying%20from%20Japanese%20auctions." target="_blank" rel="noopener">
@@ -787,7 +980,7 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
         </form>
 
         <div>
-          <div class="card reveal"><div class="body">
+          <div class="card" data-goto="howto" tabindex="0" role="link" aria-label="Read the full buying guide"><div class="body">
             <h3>How suggestions work here</h3>
             <p><b>1. Instant suggestions (on this page)</b> — based on your type, budget and fuel choice, the page matches you with the models on our Cars page that buyers in similar markets order most.</p>
             <p><b>2. Henry's personal suggestions</b> — auctions change daily. When you send your demand on WhatsApp, Henry checks this week's actual auction lists, grades and hammer-price trends, then sends real cars with translated sheets — not just model names.</p>
@@ -892,7 +1085,7 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
         <div class="card policy-card reveal"><div class="body"><h3><span class="policy-num">8</span> Vehicle Condition &amp; After-Sale Policy</h3><ul><li><b>Sold as graded:</b> used auction cars are sold in the condition described by the auction sheet and photos — grade <b>5/4.5</b> excellent, <b>4</b> good, <b>3.5</b> average wear, <b>3</b> rough, <b>R/RA</b> accident-repaired and disclosed.</li><li><b>No hidden history:</b> repair marks, panel replacements and inspector notes on the sheet are translated for you — we do not upgrade a grade in words.</li><li><b>After arrival:</b> if the car materially differs from its sheet and photo set, message Henry with photos/videos promptly — he will review it against the auction record with you.</li><li><b>Used-car reality:</b> normal wear for age and mileage (tyres, battery, minor marks consistent with the grade) is part of a used auction purchase and is not a defect claim.</li></ul></div></div>
       </div>
 
-      <div class="note reveal" style="margin-top:26px"><b>Privacy &amp; communication:</b> your name, contact and demand details are used only to source, bid and ship your car and to reply to you — this website itself stores nothing you type (the demand form only prepares a WhatsApp or email message that you choose to send). Official communication is only from <b>henry@aninternationaljapan.com</b>, WhatsApp <b>+92 371 5130073</b> and Instagram <b>@henry_anjapan</b>.</div>
+      <div class="note reveal" style="margin-top:26px" data-goto="company" tabindex="0" role="link" aria-label="See company and contact details"><b>Privacy &amp; communication:</b> your name, contact and demand details are used only to source, bid and ship your car and to reply to you — this website itself stores nothing you type (the demand form only prepares a WhatsApp or email message that you choose to send). Official communication is only from <b>henry@aninternationaljapan.com</b>, WhatsApp <b>+92 371 5130073</b> and Instagram <b>@henry_anjapan</b>.</div>
 
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
         <button class="btn btn-dark" data-goto="howto">See the step-by-step buying guide →</button>
@@ -932,6 +1125,7 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
   <div class="wrap">
     <div class="cols">
       <div>
+        <img class="foot-logo" src="img004.png" alt="AN International Japan — Trust and Quality" width="884" height="247" />
         <h4>AN INTERNATIONAL JAPAN</h4>
         <p style="margin:0;max-width:44ch">Licensed Japanese auction member in Ichinomiya, Aichi. Cars, trucks and heavy machinery — sourced to order and shipped worldwide since 2009.</p>
       </div>
@@ -956,13 +1150,14 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
           <li><a href="https://github.com/henry-an-japan" target="_blank" rel="noopener">GitHub: henry-an-japan</a></li>
           <li><a href="https://henry-an-japan.github.io/" target="_blank" rel="noopener">This site on GitHub Pages</a></li>
           <li><a href="https://aninternationaljapan.com/" target="_blank" rel="noopener">aninternationaljapan.com</a></li>
-          <li><a href="tel:+818045464242">Company: +81 80-4546-4242</a></li>
         </ul>
       </div>
     </div>
     <p class="fine">Market statistics are Japan-wide published figures from the sources listed on the Company page — they describe the market, not AN International's own sales, which the company does not publish. Listings marked “Listed on our main site” show that car's own showroom photos from aninternationaljapan.com; other photos are representative of the model shown, and every actual car is supplied with its own auction sheet and photos before purchase.</p>
   </div>
 </footer>
+
+<button id="toTop" type="button" aria-label="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 
 <a class="float-wa" href="https://wa.me/923715130073?text=Hello%20Henry%2C%20I%20want%20to%20buy%20a%20car%20from%20Japanese%20auctions." target="_blank" rel="noopener" aria-label="Chat with Henry on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1.1-1.3c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
@@ -982,27 +1177,27 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
     return 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent('Hello Henry, please send me the full details, more photos and today\'s price for this car: ' + location.origin + location.pathname + '#car=' + id);
   }
   var CARS = [
-    {id:"landcruiser300", name:"Toyota Land Cruiser 300", img:"img003.jpg", gallery:["img003.jpg","img004.jpg"], alt:"Toyota Land Cruiser 300 SUV", type:"suv", grade:"4.5 / 5 typical", years:"2021 – 2025", specs:["3.3L diesel / 3.5L petrol V6","Full-time 4WD","7 seats"], engine:"3.3L V6 diesel or 3.5L V6 petrol twin-turbo", trans:"10-speed automatic", fuel:"Diesel / Petrol", seats:"7", drive:"Full-time 4WD, low range", mileage:"Typically 10,000 – 60,000 km at auction", auctions:"USS Tokyo · TAA · USS Nagoya", why:"The king of resale in Africa, the Middle East and Russia — dealers order it again and again.", desc:"Japan's flagship SUV and the single most requested export model through our office. Auction examples are usually one-owner, dealer-serviced cars with full Toyota histories. ZX and GR Sport trims command the strongest money; the diesel is the favourite for Africa and the Middle East.", msg:"Hello Henry, I am interested in a Toyota Land Cruiser 300 from Japanese auction. Please send available cars with grades and prices."},
-    {id:"gtr", name:"Nissan GT-R R35", img:"img005.jpg", gallery:["img005.jpg","img006.jpg"], alt:"Nissan GT-R R35 sports car in Japan", type:"sports", grade:"4 / 4.5 typical", years:"2008 – 2024", specs:["3.8L twin-turbo V6","565 hp","AWD"], engine:"3.8L V6 twin-turbo (VR38DETT), up to 600 hp in Nismo trim", trans:"6-speed dual-clutch", fuel:"Petrol (premium)", seats:"4 (2+2)", drive:"ATTESA E-TS all-wheel drive", mileage:"Typically 20,000 – 80,000 km at auction", auctions:"USS Tokyo · Aucnet · specialty sales", why:"The enthusiast's dream — Japan is the only place to buy a clean, honestly-graded R35.", desc:"Hand-built engine, launch control and supercar pace — and Japanese auction cars are graded by independent inspectors, so accident repair and tuning history is declared on the sheet, not hidden. Premium Edition and Black Edition cars are the sweet spot for export.", msg:"Hello Henry, I am interested in a Nissan GT-R R35 from Japanese auction. Please send available cars with grades and prices."},
-    {id:"prius", name:"Toyota Prius", img:"img007.jpg", gallery:["img007.jpg","img008.jpg"], alt:"Toyota Prius hybrid car", type:"hybrid", grade:"4 / 4.5 typical", years:"2016 – 2025", specs:["1.8L hybrid","~30 km/L class economy","Hatchback"], engine:"1.8L petrol hybrid (2ZR-FXE); 2.0L hybrid on the newest shape", trans:"e-CVT automatic", fuel:"Petrol hybrid", seats:"5", drive:"FWD (E-Four AWD available)", mileage:"Typically 30,000 – 120,000 km at auction", auctions:"TAA · USS · CAA — every network, every week", why:"The world's favourite hybrid — the top pick for Pakistan, Mongolia and taxi fleets everywhere.", desc:"The default hybrid export. Cheap to buy, famously reliable, and the hybrid battery health shows in the auction inspection. Pakistan buyers: the 1.8L shape fits the popular import schemes; Mongolia buyers: E-Four AWD versions handle winter best.", msg:"Hello Henry, I am interested in a Toyota Prius from Japanese auction. Please send available cars with grades and prices."},
-    {id:"aqua", name:"Toyota Aqua (Prius c)", img:"img009.jpg", gallery:["img009.jpg","img010.jpg","img011.jpg"], alt:"Toyota Aqua compact hybrid hatchback", type:"hybrid", grade:"4 / 4.5 typical", years:"2012 – 2025", specs:["1.5L hybrid","Best-selling hybrid in Japan","Compact hatch"], engine:"1.5L petrol hybrid (1NZ-FXE); 1.5L on the new shape", trans:"e-CVT automatic", fuel:"Petrol hybrid", seats:"5", drive:"FWD (AWD on newer shape)", mileage:"Typically 30,000 – 110,000 km at auction", auctions:"TAA · JU · USS — huge weekly volume", why:"Pakistan's favourite import hybrid — small, frugal and easy to resell in any city.", desc:"For years the Aqua traded the title of Japan's best-selling car with the Prius. For Pakistan it is the classic choice under the 3-year import rules — S and G grades with push start and cruise control sell fastest. The second-generation car (2021+) adds Toyota Safety Sense as standard.", msg:"Hello Henry, I am interested in a Toyota Aqua from Japanese auction. Please send available cars with grades and prices."},
-    {id:"vezel", name:"Honda Vezel (HR-V)", img:"img012.jpg", gallery:["img012.jpg","img013.jpg","img014.jpg"], alt:"Honda Vezel compact SUV", type:"suv", grade:"4 / 4.5 typical", years:"2014 – 2025", specs:["1.5L / hybrid e:HEV","Magic seats","Compact SUV"], engine:"1.5L petrol or 1.5L e:HEV hybrid", trans:"CVT automatic", fuel:"Petrol / Hybrid", seats:"5", drive:"FWD or AWD", mileage:"Typically 20,000 – 90,000 km at auction", auctions:"USS · JU · HAA Kobe", why:"The stylish compact SUV dealers in Kenya, Pakistan and the Caribbean ask for by name.", desc:"Coupe-like looks with Honda's Magic Seat practicality. The hybrid versions are the export favourites — strong economy with SUV ground clearance. RS trim (shown in red in the gallery) adds sportier suspension and styling.", msg:"Hello Henry, I am interested in a Honda Vezel from Japanese auction. Please send available cars with grades and prices."},
-    {id:"cx5", name:"Mazda CX-5", img:"img015.jpg", gallery:["img015.jpg","img016.jpg","img017.jpg"], alt:"Mazda CX-5 SUV in Soul Red", type:"suv", grade:"4 / 4.5 typical", years:"2017 – 2025", specs:["2.2L diesel / 2.5L petrol","AWD available","Premium interior"], engine:"2.2L SKYACTIV-D diesel or 2.0L / 2.5L SKYACTIV-G petrol", trans:"6-speed automatic", fuel:"Diesel / Petrol", seats:"5", drive:"FWD or i-ACTIV AWD", mileage:"Typically 30,000 – 100,000 km at auction", auctions:"USS · ARAI · JU", why:"The driver's SUV — Kenyan and East African dealers love the diesel's torque and economy.", desc:"Mazda's best seller pairs an upmarket cabin with the torquey 2.2 diesel that African buyers prefer. XD Proactive and L Package trims carry leather and the full safety suite.", msg:"Hello Henry, I am interested in a Mazda CX-5 from Japanese auction. Please send available cars with grades and prices."},
-    {id:"jimny", name:"Suzuki Jimny", img:"img018.jpg", gallery:["img018.jpg","img019.jpg"], alt:"Suzuki Jimny compact 4x4", type:"suv", grade:"4 / 4.5 typical", years:"2018 – 2025", specs:["1.5L petrol","Part-time 4WD, low range","Ladder frame"], engine:"1.5L petrol (K15B); 660cc turbo in kei Jimny trim", trans:"5-speed manual or 4-speed automatic", fuel:"Petrol", seats:"4", drive:"Part-time 4WD with low range", mileage:"Typically 5,000 – 50,000 km at auction", auctions:"USS · JU · specialty 4WD sales", why:"A real off-roader in kei-car clothing — UK, Australian and NZ buyers hunt these weekly.", desc:"Ladder frame, live axles and proper low range in a car the size of a hatchback. The 1.5L 'Sierra' is the export model; Japanese demand keeps prices firm, so clean grade-4.5 cars are worth bidding on quickly.", msg:"Hello Henry, I am interested in a Suzuki Jimny from Japanese auction. Please send available cars with grades and prices."},
-    {id:"alphard", name:"Toyota Alphard", img:"img020.jpg", gallery:["img020.jpg","img021.jpg","img022.jpg"], alt:"Toyota Alphard luxury minivan", type:"family", grade:"4 / 4.5 typical", years:"2015 – 2025", specs:["2.5L hybrid available","Executive lounge seats","Power sliding doors"], engine:"2.5L petrol / 2.5L hybrid / 3.5L V6 (older shape)", trans:"CVT / 8-speed automatic", fuel:"Petrol / Hybrid", seats:"7 or 8", drive:"FWD or E-Four AWD", mileage:"Typically 20,000 – 90,000 km at auction", auctions:"TAA · USS Tokyo · USS Nagoya", why:"Asia's luxury people-mover — strong, steady demand from Malaysia to the Middle East.", desc:"The chauffeur-class van: captain seats, twin power doors and a cabin quieter than most luxury sedans. Executive Lounge is the top trim. Malaysia, Hong Kong-route and Middle East buyers order these continuously, and hybrid versions hold value best.", msg:"Hello Henry, I am interested in a Toyota Alphard from Japanese auction. Please send available cars with grades and prices."},
-    {id:"note2021", name:"Nissan Note — 2021", img:"img023.jpg", gallery:["img023.jpg","img024.jpg","img025.jpg","img026.jpg"], alt:"White 2021 Nissan Note hatchback at AN International Japan", type:"hybrid", listed:true, grade:"As listed on our main site", years:"2021", specs:["Mileage 94,000 km","Engine 1,200 cc","Colour: White"], engine:"1.2L e-POWER series hybrid (HR12DE + electric motor)", trans:"Automatic (single-speed electric drive)", fuel:"Petrol-electric (e-POWER)", seats:"5", drive:"FWD", mileage:"94,000 km (as listed)", colour:"White", auctions:"Listed stock — AN International Japan main website", why:"Current listing on our own main website — the e-POWER Note drives like an EV but never needs a charger.", desc:"This 2021 Nissan Note is a live listing from AN International Japan's own website, photographed in our showroom — see the gallery for the actual car: exterior front and rear, dashboard, digital cluster and cabin. The e-POWER system uses the petrol engine only as a generator, so you get instant electric torque with hatchback running costs. Message Henry for its price and full inspection details.", msg:"Hello Henry, I am interested in the Nissan Note 2021 (94,000 km, white) listed on your website. Please send its price and full details."},
-    {id:"lutecia", name:"Renault Lutecia — 2019", img:"img027.jpg", gallery:["img027.jpg","img028.jpg","img029.jpg","img030.jpg"], alt:"Blue 2019 Renault Lutecia (Clio) at AN International Japan", type:"family", listed:true, grade:"As listed on our main site", years:"2019", specs:["Mileage 52,000 km","Engine 1,200 cc","Colour: Blue"], engine:"1.2L turbo petrol (H5F)", trans:"Automatic (EDC dual-clutch)", fuel:"Petrol", seats:"5", drive:"FWD", mileage:"52,000 km (as listed)", colour:"Blue", auctions:"Listed stock — AN International Japan main website", why:"A European hatch with Japanese-auction honesty — the Lutecia is the Clio's Japanese-market name.", desc:"Listed on AN International Japan's own website and photographed in our showroom — the gallery shows this actual blue 2019 Lutecia from every angle, inside and out. In Japan the Renault Clio is sold as the Lutecia, and clean low-mileage examples like this 52,000 km car are exactly what the auctions and our supplier network turn up. Message Henry for its price.", msg:"Hello Henry, I am interested in the Renault Lutecia 2019 (52,000 km, blue) listed on your website. Please send its price and full details."},
-    {id:"mini2017", name:"BMW MINI — 2017", img:"img031.jpg", gallery:["img031.jpg","img032.jpg","img033.jpg","img034.jpg"], alt:"Grey 2017 BMW MINI 5-door at AN International Japan", type:"family", listed:true, grade:"As listed on our main site", years:"2017", specs:["Mileage 96,000 km","Engine 1,200 cc","Colour: Gray"], engine:"1.2L turbo petrol (B38)", trans:"Automatic", fuel:"Petrol", seats:"5", drive:"FWD", mileage:"96,000 km (as listed)", colour:"Gray", auctions:"Listed stock — AN International Japan main website", why:"The 5-door MINI One/Cooper class — premium feel, small-car costs, listed on our own site.", desc:"A live listing from our main website, photographed in the AN International showroom — browse the gallery for front, rear and interior shots of this exact grey 2017 MINI 5-door. Japanese-market MINIs are usually dealer-maintained with full records. Message Henry for its price and condition report.", msg:"Hello Henry, I am interested in the BMW MINI 2017 (96,000 km, gray) listed on your website. Please send its price and full details."},
-    {id:"bmw4", name:"BMW 4 Series — 2016", img:"img035.jpg", gallery:["img035.jpg","img036.jpg","img037.jpg","img038.jpg"], alt:"White 2016 BMW 4 Series coupe at AN International Japan", type:"sports", listed:true, grade:"As listed on our main site", years:"2016", specs:["Mileage 99,000 km","Engine 2,000 cc","Colour: White"], engine:"2.0L turbo petrol (B48 / N20 by grade)", trans:"8-speed automatic", fuel:"Petrol", seats:"4", drive:"RWD", mileage:"99,000 km (as listed)", colour:"White", auctions:"Listed stock — AN International Japan main website", why:"A German coupe at a Japanese-auction price — listed on our main site with full showroom photos.", desc:"This white 2016 BMW 4 Series coupe is listed on AN International Japan's own website; the gallery shows the actual car in our showroom — front, rear, cockpit and cabin. European cars are a quiet bargain in Japan: first owners spec them well and the auctions grade them as strictly as any Toyota. Message Henry for its price.", msg:"Hello Henry, I am interested in the BMW 4 Series 2016 (99,000 km, white) listed on your website. Please send its price and full details."},
-    {id:"golf2018", name:"Volkswagen Golf — 2018", img:"img039.jpg", gallery:["img039.jpg","img040.jpg","img041.jpg","img042.jpg"], alt:"White 2018 Volkswagen Golf at AN International Japan", type:"family", listed:true, grade:"As listed on our main site", years:"2018", specs:["Mileage 109,000 km","Engine 1,200 cc","Colour: White"], engine:"1.2L TSI turbo petrol (CJZ)", trans:"7-speed DSG automatic", fuel:"Petrol", seats:"5", drive:"FWD", mileage:"109,000 km (as listed)", colour:"White", auctions:"Listed stock — AN International Japan main website", why:"The benchmark hatchback, listed on our own website — solid German build, Japanese service history.", desc:"From our main website's live listings, photographed in our showroom — the gallery covers this white 2018 Golf from all sides, including the cabin and rear seats. The 1.2 TSI is the economical Japanese-market spec, cheap to run and easy to resell. Message Henry for its price.", msg:"Hello Henry, I am interested in the Volkswagen Golf 2018 (109,000 km, white) listed on your website. Please send its price and full details."},
-    {id:"polo2019", name:"Volkswagen Polo — 2019", img:"img043.jpg", gallery:["img043.jpg","img044.jpg"], alt:"Blue 2019 Volkswagen Polo hatchback", type:"family", listed:true, grade:"As listed on our main site", years:"2019", specs:["Mileage 64,000 km","Engine 1,000 cc","Colour: Blue"], engine:"1.0L TSI turbo petrol", trans:"7-speed DSG automatic", fuel:"Petrol", seats:"5", drive:"FWD", mileage:"64,000 km (as listed)", colour:"Blue", auctions:"Listed stock — AN International Japan main website", why:"Low-mileage 2019 Polo in blue, listed on our main site — a tidy first import.", desc:"Listed on AN International Japan's own website: a 2019 Volkswagen Polo, 1.0 TSI, blue, with just 64,000 km. The Polo gives you Golf quality in a smaller, cheaper package, and Japanese examples are typically one-owner cars with dealer history. The photo shows the model; Henry will send this car's own showroom photos and sheet on WhatsApp. Message him for its price.", msg:"Hello Henry, I am interested in the VW Polo 2019 (64,000 km, blue) listed on your website. Please send its price and full details."},
-    {id:"vwup", name:"Volkswagen up! — 2017", img:"img045.jpg", gallery:["img045.jpg","img046.jpg","img047.jpg","img048.jpg","img049.jpg","img050.jpg"], alt:"White 2017 Volkswagen up! city car at AN International Japan", type:"work", listed:true, grade:"As listed on our main site", years:"2017", specs:["Mileage 99,000 km","Engine 1,000 cc","Colour: White"], engine:"1.0L petrol (CHY)", trans:"5-speed ASG automated manual", fuel:"Petrol", seats:"4", drive:"FWD", mileage:"99,000 km (as listed)", colour:"White", auctions:"Listed stock — AN International Japan main website", why:"The cheapest way into a German badge — a city runabout listed on our own website.", desc:"A live listing from our main website with a six-photo gallery of the actual car — exterior, interior and even the instrument cluster. The up! is VW's city car: tiny outside, clever inside, and sips fuel. Ideal low-cost import for island and city buyers. Message Henry for its price.", msg:"Hello Henry, I am interested in the Volkswagen UP 2017 (99,000 km, white) listed on your website. Please send its price and full details."},
-    {id:"golf2023", name:"Volkswagen Golf TDI R-Line — 2023", img:"img051.jpg", gallery:["img051.jpg","img052.jpg"], alt:"Grey Volkswagen Golf 8 R-Line hatchback", type:"family", listed:true, grade:"As listed on our main site", years:"2023", specs:["Engine 2.0L diesel","R-Line trim","Colour: Grey"], engine:"2.0L TDI diesel turbo", trans:"7-speed DSG automatic", fuel:"Diesel", seats:"5", drive:"FWD", mileage:"Ask Henry for the current figure", colour:"Grey", auctions:"Listed stock — AN International Japan main website", why:"Nearly new Golf 8 diesel in sporty R-Line trim, listed on our main site.", desc:"The newest car on our main website: a 2023 Golf 8 TDI in R-Line trim and grey. The 2.0 diesel gives effortless motorway torque with hatchback economy, and R-Line adds the sports body kit, seats and digital cockpit. The photo shows the model; Henry will send this car's own photos, mileage and price on WhatsApp.", msg:"Hello Henry, I am interested in the Volkswagen Golf 2023 TDI R-Line (grey) listed on your website. Please send its price and full details."},
-    {id:"fit", name:"Honda Fit (Jazz)", img:"img053.jpg", gallery:["img053.jpg","img054.jpg","img055.jpg"], alt:"Honda Fit compact hatchback", type:"hybrid", grade:"4 typical", years:"2013 – 2025", specs:["1.3L / 1.5L, hybrid e:HEV","Magic seats","Compact hatch"], engine:"1.3L / 1.5L petrol, or 1.5L e:HEV hybrid", trans:"CVT automatic", fuel:"Petrol / Hybrid", seats:"5", drive:"FWD or AWD", mileage:"Typically 30,000 – 110,000 km at auction", auctions:"USS · JU · CAA — everywhere, weekly", why:"Cheap to buy, cheap to run, easy to sell — a first-car favourite in Kenya and the Caribbean.", desc:"The do-everything hatchback: Magic Seats fold flat or flip up for tall loads, and the hybrid version returns Prius-like economy. Kenya buyers note: pick cars under the 8-year age rule with clean QISJ history.", msg:"Hello Henry, I am interested in a Honda Fit from Japanese auction. Please send available cars with grades and prices."},
-    {id:"fielder", name:"Toyota Corolla Fielder", img:"img056.jpg", gallery:["img056.jpg","img057.jpg"], alt:"Toyota Corolla Fielder hybrid wagon", type:"hybrid", grade:"4 / 4.5 typical", years:"2013 – 2025", specs:["1.5L hybrid wagon","Huge flat load bay","Dealer & family favourite"], engine:"1.5L petrol or 1.5L hybrid", trans:"CVT automatic", fuel:"Petrol / Hybrid", seats:"5", drive:"FWD or AWD", mileage:"Typically 40,000 – 130,000 km at auction", auctions:"TAA · USS · JU", why:"Kenya's wagon king — hybrid economy with a van-sized boot, loved by dealers and families.", desc:"If the Prius is the hybrid hatch, the Fielder is the hybrid workhorse — same proven 1.5 hybrid system under a long, flat wagon body. It is a fixture of Kenyan roads for a reason: cheap parts, known mechanics, strong resale.", msg:"Hello Henry, I am interested in a Toyota Corolla Fielder from Japanese auction. Please send available cars with grades and prices."},
-    {id:"nbox", name:"Honda N-BOX", img:"img058.jpg", gallery:["img058.jpg","img059.jpg","img060.jpg"], alt:"Honda N-BOX kei car in Japan", type:"work", grade:"4 / 4.5 typical", years:"2017 – 2025", specs:["660cc kei engine","Japan's best-selling car","Sliding doors"], engine:"660cc petrol, NA or turbo (kei class)", trans:"CVT automatic", fuel:"Petrol", seats:"4", drive:"FWD or AWD", mileage:"Typically 10,000 – 70,000 km at auction", auctions:"USS · JU — the biggest kei volumes in Japan", why:"Japan's No.1 selling car year after year — a tall, clever kei box that city buyers adore.", desc:"The N-BOX has topped Japan's sales charts for a decade: sliding rear doors, a lounge-like cabin and kei-car running costs. Custom trim adds alloys and the turbo engine. Perfect for island markets and city delivery work.", msg:"Hello Henry, I am interested in a Honda N-BOX from Japanese auction. Please send available cars with grades and prices."},
-    {id:"hiace", name:"Toyota Hiace Van", img:"img061.jpg", gallery:["img061.jpg","img062.jpg"], alt:"Toyota Hiace van in Japan", type:"work", grade:"3.5 / 4 typical", years:"2013 – 2025", specs:["2.8L diesel available","Cargo or commuter","The world workhorse"], engine:"2.7L petrol or 2.8L / 3.0L diesel", trans:"Automatic or manual", fuel:"Diesel / Petrol", seats:"3 – 14 by body type", drive:"RWD or 4WD", mileage:"Typically 60,000 – 180,000 km at auction", auctions:"ARAI · USS · truck & van sales", why:"The van that moves Africa and the Pacific — cargo, commuter or camper base, it never stops selling.", desc:"Every market knows the Hiace. Japanese examples are prized because vans at home work gentler lives than export-market ones. Super GL is the well-equipped trim; the 2.8 diesel (1GD) is the one to bid on for commercial buyers.", msg:"Hello Henry, I am interested in a Toyota Hiace van from Japanese auction. Please send available vans with grades and prices."},
-    {id:"carry", name:"Suzuki Carry Kei Truck", img:"img063.jpg", gallery:["img063.jpg","img064.jpg"], alt:"Suzuki Carry kei truck with a driver by a lake in Japan", type:"work", grade:"3.5 / 4 typical", years:"2013 – 2025", specs:["660cc kei engine","4WD available","Flat-bed workhorse"], engine:"660cc petrol (kei class)", trans:"5-speed manual or automatic", fuel:"Petrol", seats:"2", drive:"RWD or part-time 4WD", mileage:"Typically 20,000 – 90,000 km at auction", auctions:"ARAI · JU · regional kei sales", why:"Farmers and small businesses worldwide import these by the container — simple, tough, fixable anywhere.", desc:"The original kei truck: a full-width flat bed, fold-down sides and an engine any mechanic on earth can fix. 4WD KC grades suit farms and hills; clean low-km trucks sell out fast, so dealers order several at once for container loads.", msg:"Hello Henry, I am interested in Suzuki Carry kei trucks from Japanese auction. Please send available trucks with grades and prices."}
+    {id:"landcruiser300", name:"Toyota Land Cruiser 300", img:"img007.jpg", gallery:["img007.jpg","img008.jpg"], alt:"Toyota Land Cruiser 300 SUV", type:"suv", grade:"4.5 / 5 typical", years:"2021 – 2025", specs:["3.3L diesel / 3.5L petrol V6","Full-time 4WD","7 seats"], engine:"3.3L V6 diesel or 3.5L V6 petrol twin-turbo", trans:"10-speed automatic", fuel:"Diesel / Petrol", seats:"7", drive:"Full-time 4WD, low range", mileage:"Typically 10,000 – 60,000 km at auction", auctions:"USS Tokyo · TAA · USS Nagoya", why:"The king of resale in Africa, the Middle East and Russia — dealers order it again and again.", desc:"Japan's flagship SUV and the single most requested export model through our office. Auction examples are usually one-owner, dealer-serviced cars with full Toyota histories. ZX and GR Sport trims command the strongest money; the diesel is the favourite for Africa and the Middle East.", msg:"Hello Henry, I am interested in a Toyota Land Cruiser 300 from Japanese auction. Please send available cars with grades and prices."},
+    {id:"gtr", name:"Nissan GT-R R35", img:"img009.jpg", gallery:["img009.jpg","img010.jpg"], alt:"Nissan GT-R R35 sports car in Japan", type:"sports", grade:"4 / 4.5 typical", years:"2008 – 2024", specs:["3.8L twin-turbo V6","565 hp","AWD"], engine:"3.8L V6 twin-turbo (VR38DETT), up to 600 hp in Nismo trim", trans:"6-speed dual-clutch", fuel:"Petrol (premium)", seats:"4 (2+2)", drive:"ATTESA E-TS all-wheel drive", mileage:"Typically 20,000 – 80,000 km at auction", auctions:"USS Tokyo · Aucnet · specialty sales", why:"The enthusiast's dream — Japan is the only place to buy a clean, honestly-graded R35.", desc:"Hand-built engine, launch control and supercar pace — and Japanese auction cars are graded by independent inspectors, so accident repair and tuning history is declared on the sheet, not hidden. Premium Edition and Black Edition cars are the sweet spot for export.", msg:"Hello Henry, I am interested in a Nissan GT-R R35 from Japanese auction. Please send available cars with grades and prices."},
+    {id:"prius", name:"Toyota Prius", img:"img011.jpg", gallery:["img011.jpg","img012.jpg"], alt:"Toyota Prius hybrid car", type:"hybrid", grade:"4 / 4.5 typical", years:"2016 – 2025", specs:["1.8L hybrid","~30 km/L class economy","Hatchback"], engine:"1.8L petrol hybrid (2ZR-FXE); 2.0L hybrid on the newest shape", trans:"e-CVT automatic", fuel:"Petrol hybrid", seats:"5", drive:"FWD (E-Four AWD available)", mileage:"Typically 30,000 – 120,000 km at auction", auctions:"TAA · USS · CAA — every network, every week", why:"The world's favourite hybrid — the top pick for Pakistan, Mongolia and taxi fleets everywhere.", desc:"The default hybrid export. Cheap to buy, famously reliable, and the hybrid battery health shows in the auction inspection. Pakistan buyers: the 1.8L shape fits the popular import schemes; Mongolia buyers: E-Four AWD versions handle winter best.", msg:"Hello Henry, I am interested in a Toyota Prius from Japanese auction. Please send available cars with grades and prices."},
+    {id:"aqua", name:"Toyota Aqua (Prius c)", img:"img013.jpg", gallery:["img013.jpg","img014.jpg","img015.jpg"], alt:"Toyota Aqua compact hybrid hatchback", type:"hybrid", grade:"4 / 4.5 typical", years:"2012 – 2025", specs:["1.5L hybrid","Best-selling hybrid in Japan","Compact hatch"], engine:"1.5L petrol hybrid (1NZ-FXE); 1.5L on the new shape", trans:"e-CVT automatic", fuel:"Petrol hybrid", seats:"5", drive:"FWD (AWD on newer shape)", mileage:"Typically 30,000 – 110,000 km at auction", auctions:"TAA · JU · USS — huge weekly volume", why:"Pakistan's favourite import hybrid — small, frugal and easy to resell in any city.", desc:"For years the Aqua traded the title of Japan's best-selling car with the Prius. For Pakistan it is the classic choice under the 3-year import rules — S and G grades with push start and cruise control sell fastest. The second-generation car (2021+) adds Toyota Safety Sense as standard.", msg:"Hello Henry, I am interested in a Toyota Aqua from Japanese auction. Please send available cars with grades and prices."},
+    {id:"vezel", name:"Honda Vezel (HR-V)", img:"img016.jpg", gallery:["img016.jpg","img017.jpg","img018.jpg"], alt:"Honda Vezel compact SUV", type:"suv", grade:"4 / 4.5 typical", years:"2014 – 2025", specs:["1.5L / hybrid e:HEV","Magic seats","Compact SUV"], engine:"1.5L petrol or 1.5L e:HEV hybrid", trans:"CVT automatic", fuel:"Petrol / Hybrid", seats:"5", drive:"FWD or AWD", mileage:"Typically 20,000 – 90,000 km at auction", auctions:"USS · JU · HAA Kobe", why:"The stylish compact SUV dealers in Kenya, Pakistan and the Caribbean ask for by name.", desc:"Coupe-like looks with Honda's Magic Seat practicality. The hybrid versions are the export favourites — strong economy with SUV ground clearance. RS trim (shown in red in the gallery) adds sportier suspension and styling.", msg:"Hello Henry, I am interested in a Honda Vezel from Japanese auction. Please send available cars with grades and prices."},
+    {id:"cx5", name:"Mazda CX-5", img:"img019.jpg", gallery:["img019.jpg","img020.jpg","img021.jpg"], alt:"Mazda CX-5 SUV in Soul Red", type:"suv", grade:"4 / 4.5 typical", years:"2017 – 2025", specs:["2.2L diesel / 2.5L petrol","AWD available","Premium interior"], engine:"2.2L SKYACTIV-D diesel or 2.0L / 2.5L SKYACTIV-G petrol", trans:"6-speed automatic", fuel:"Diesel / Petrol", seats:"5", drive:"FWD or i-ACTIV AWD", mileage:"Typically 30,000 – 100,000 km at auction", auctions:"USS · ARAI · JU", why:"The driver's SUV — Kenyan and East African dealers love the diesel's torque and economy.", desc:"Mazda's best seller pairs an upmarket cabin with the torquey 2.2 diesel that African buyers prefer. XD Proactive and L Package trims carry leather and the full safety suite.", msg:"Hello Henry, I am interested in a Mazda CX-5 from Japanese auction. Please send available cars with grades and prices."},
+    {id:"jimny", name:"Suzuki Jimny", img:"img022.jpg", gallery:["img022.jpg","img023.jpg"], alt:"Suzuki Jimny compact 4x4", type:"suv", grade:"4 / 4.5 typical", years:"2018 – 2025", specs:["1.5L petrol","Part-time 4WD, low range","Ladder frame"], engine:"1.5L petrol (K15B); 660cc turbo in kei Jimny trim", trans:"5-speed manual or 4-speed automatic", fuel:"Petrol", seats:"4", drive:"Part-time 4WD with low range", mileage:"Typically 5,000 – 50,000 km at auction", auctions:"USS · JU · specialty 4WD sales", why:"A real off-roader in kei-car clothing — UK, Australian and NZ buyers hunt these weekly.", desc:"Ladder frame, live axles and proper low range in a car the size of a hatchback. The 1.5L 'Sierra' is the export model; Japanese demand keeps prices firm, so clean grade-4.5 cars are worth bidding on quickly.", msg:"Hello Henry, I am interested in a Suzuki Jimny from Japanese auction. Please send available cars with grades and prices."},
+    {id:"alphard", name:"Toyota Alphard", img:"img024.jpg", gallery:["img024.jpg","img025.jpg","img026.jpg"], alt:"Toyota Alphard luxury minivan", type:"family", grade:"4 / 4.5 typical", years:"2015 – 2025", specs:["2.5L hybrid available","Executive lounge seats","Power sliding doors"], engine:"2.5L petrol / 2.5L hybrid / 3.5L V6 (older shape)", trans:"CVT / 8-speed automatic", fuel:"Petrol / Hybrid", seats:"7 or 8", drive:"FWD or E-Four AWD", mileage:"Typically 20,000 – 90,000 km at auction", auctions:"TAA · USS Tokyo · USS Nagoya", why:"Asia's luxury people-mover — strong, steady demand from Malaysia to the Middle East.", desc:"The chauffeur-class van: captain seats, twin power doors and a cabin quieter than most luxury sedans. Executive Lounge is the top trim. Malaysia, Hong Kong-route and Middle East buyers order these continuously, and hybrid versions hold value best.", msg:"Hello Henry, I am interested in a Toyota Alphard from Japanese auction. Please send available cars with grades and prices."},
+    {id:"note2021", name:"Nissan Note — 2021", img:"img027.jpg", gallery:["img027.jpg","img028.jpg","img029.jpg","img030.jpg"], alt:"White 2021 Nissan Note hatchback at AN International Japan", type:"hybrid", listed:true, grade:"As listed on our main site", years:"2021", specs:["Mileage 94,000 km","Engine 1,200 cc","Colour: White"], engine:"1.2L e-POWER series hybrid (HR12DE + electric motor)", trans:"Automatic (single-speed electric drive)", fuel:"Petrol-electric (e-POWER)", seats:"5", drive:"FWD", mileage:"94,000 km (as listed)", colour:"White", auctions:"Listed stock — AN International Japan main website", why:"Current listing on our own main website — the e-POWER Note drives like an EV but never needs a charger.", desc:"This 2021 Nissan Note is a live listing from AN International Japan's own website, photographed in our showroom — see the gallery for the actual car: exterior front and rear, dashboard, digital cluster and cabin. The e-POWER system uses the petrol engine only as a generator, so you get instant electric torque with hatchback running costs. Message Henry for its price and full inspection details.", msg:"Hello Henry, I am interested in the Nissan Note 2021 (94,000 km, white) listed on your website. Please send its price and full details."},
+    {id:"lutecia", name:"Renault Lutecia — 2019", img:"img031.jpg", gallery:["img031.jpg","img032.jpg","img033.jpg","img034.jpg"], alt:"Blue 2019 Renault Lutecia (Clio) at AN International Japan", type:"family", listed:true, grade:"As listed on our main site", years:"2019", specs:["Mileage 52,000 km","Engine 1,200 cc","Colour: Blue"], engine:"1.2L turbo petrol (H5F)", trans:"Automatic (EDC dual-clutch)", fuel:"Petrol", seats:"5", drive:"FWD", mileage:"52,000 km (as listed)", colour:"Blue", auctions:"Listed stock — AN International Japan main website", why:"A European hatch with Japanese-auction honesty — the Lutecia is the Clio's Japanese-market name.", desc:"Listed on AN International Japan's own website and photographed in our showroom — the gallery shows this actual blue 2019 Lutecia from every angle, inside and out. In Japan the Renault Clio is sold as the Lutecia, and clean low-mileage examples like this 52,000 km car are exactly what the auctions and our supplier network turn up. Message Henry for its price.", msg:"Hello Henry, I am interested in the Renault Lutecia 2019 (52,000 km, blue) listed on your website. Please send its price and full details."},
+    {id:"mini2017", name:"BMW MINI — 2017", img:"img035.jpg", gallery:["img035.jpg","img036.jpg","img037.jpg","img038.jpg"], alt:"Grey 2017 BMW MINI 5-door at AN International Japan", type:"family", listed:true, grade:"As listed on our main site", years:"2017", specs:["Mileage 96,000 km","Engine 1,200 cc","Colour: Gray"], engine:"1.2L turbo petrol (B38)", trans:"Automatic", fuel:"Petrol", seats:"5", drive:"FWD", mileage:"96,000 km (as listed)", colour:"Gray", auctions:"Listed stock — AN International Japan main website", why:"The 5-door MINI One/Cooper class — premium feel, small-car costs, listed on our own site.", desc:"A live listing from our main website, photographed in the AN International showroom — browse the gallery for front, rear and interior shots of this exact grey 2017 MINI 5-door. Japanese-market MINIs are usually dealer-maintained with full records. Message Henry for its price and condition report.", msg:"Hello Henry, I am interested in the BMW MINI 2017 (96,000 km, gray) listed on your website. Please send its price and full details."},
+    {id:"bmw4", name:"BMW 4 Series — 2016", img:"img039.jpg", gallery:["img039.jpg","img040.jpg","img041.jpg","img042.jpg"], alt:"White 2016 BMW 4 Series coupe at AN International Japan", type:"sports", listed:true, grade:"As listed on our main site", years:"2016", specs:["Mileage 99,000 km","Engine 2,000 cc","Colour: White"], engine:"2.0L turbo petrol (B48 / N20 by grade)", trans:"8-speed automatic", fuel:"Petrol", seats:"4", drive:"RWD", mileage:"99,000 km (as listed)", colour:"White", auctions:"Listed stock — AN International Japan main website", why:"A German coupe at a Japanese-auction price — listed on our main site with full showroom photos.", desc:"This white 2016 BMW 4 Series coupe is listed on AN International Japan's own website; the gallery shows the actual car in our showroom — front, rear, cockpit and cabin. European cars are a quiet bargain in Japan: first owners spec them well and the auctions grade them as strictly as any Toyota. Message Henry for its price.", msg:"Hello Henry, I am interested in the BMW 4 Series 2016 (99,000 km, white) listed on your website. Please send its price and full details."},
+    {id:"golf2018", name:"Volkswagen Golf — 2018", img:"img043.jpg", gallery:["img043.jpg","img044.jpg","img045.jpg","img046.jpg"], alt:"White 2018 Volkswagen Golf at AN International Japan", type:"family", listed:true, grade:"As listed on our main site", years:"2018", specs:["Mileage 109,000 km","Engine 1,200 cc","Colour: White"], engine:"1.2L TSI turbo petrol (CJZ)", trans:"7-speed DSG automatic", fuel:"Petrol", seats:"5", drive:"FWD", mileage:"109,000 km (as listed)", colour:"White", auctions:"Listed stock — AN International Japan main website", why:"The benchmark hatchback, listed on our own website — solid German build, Japanese service history.", desc:"From our main website's live listings, photographed in our showroom — the gallery covers this white 2018 Golf from all sides, including the cabin and rear seats. The 1.2 TSI is the economical Japanese-market spec, cheap to run and easy to resell. Message Henry for its price.", msg:"Hello Henry, I am interested in the Volkswagen Golf 2018 (109,000 km, white) listed on your website. Please send its price and full details."},
+    {id:"polo2019", name:"Volkswagen Polo — 2019", img:"img047.jpg", gallery:["img047.jpg","img048.jpg"], alt:"Blue 2019 Volkswagen Polo hatchback", type:"family", listed:true, grade:"As listed on our main site", years:"2019", specs:["Mileage 64,000 km","Engine 1,000 cc","Colour: Blue"], engine:"1.0L TSI turbo petrol", trans:"7-speed DSG automatic", fuel:"Petrol", seats:"5", drive:"FWD", mileage:"64,000 km (as listed)", colour:"Blue", auctions:"Listed stock — AN International Japan main website", why:"Low-mileage 2019 Polo in blue, listed on our main site — a tidy first import.", desc:"Listed on AN International Japan's own website: a 2019 Volkswagen Polo, 1.0 TSI, blue, with just 64,000 km. The Polo gives you Golf quality in a smaller, cheaper package, and Japanese examples are typically one-owner cars with dealer history. The photo shows the model; Henry will send this car's own showroom photos and sheet on WhatsApp. Message him for its price.", msg:"Hello Henry, I am interested in the VW Polo 2019 (64,000 km, blue) listed on your website. Please send its price and full details."},
+    {id:"vwup", name:"Volkswagen up! — 2017", img:"img049.jpg", gallery:["img049.jpg","img050.jpg","img051.jpg","img052.jpg","img053.jpg","img054.jpg"], alt:"White 2017 Volkswagen up! city car at AN International Japan", type:"work", listed:true, grade:"As listed on our main site", years:"2017", specs:["Mileage 99,000 km","Engine 1,000 cc","Colour: White"], engine:"1.0L petrol (CHY)", trans:"5-speed ASG automated manual", fuel:"Petrol", seats:"4", drive:"FWD", mileage:"99,000 km (as listed)", colour:"White", auctions:"Listed stock — AN International Japan main website", why:"The cheapest way into a German badge — a city runabout listed on our own website.", desc:"A live listing from our main website with a six-photo gallery of the actual car — exterior, interior and even the instrument cluster. The up! is VW's city car: tiny outside, clever inside, and sips fuel. Ideal low-cost import for island and city buyers. Message Henry for its price.", msg:"Hello Henry, I am interested in the Volkswagen UP 2017 (99,000 km, white) listed on your website. Please send its price and full details."},
+    {id:"golf2023", name:"Volkswagen Golf TDI R-Line — 2023", img:"img055.jpg", gallery:["img055.jpg","img056.jpg"], alt:"Grey Volkswagen Golf 8 R-Line hatchback", type:"family", listed:true, grade:"As listed on our main site", years:"2023", specs:["Engine 2.0L diesel","R-Line trim","Colour: Grey"], engine:"2.0L TDI diesel turbo", trans:"7-speed DSG automatic", fuel:"Diesel", seats:"5", drive:"FWD", mileage:"Ask Henry for the current figure", colour:"Grey", auctions:"Listed stock — AN International Japan main website", why:"Nearly new Golf 8 diesel in sporty R-Line trim, listed on our main site.", desc:"The newest car on our main website: a 2023 Golf 8 TDI in R-Line trim and grey. The 2.0 diesel gives effortless motorway torque with hatchback economy, and R-Line adds the sports body kit, seats and digital cockpit. The photo shows the model; Henry will send this car's own photos, mileage and price on WhatsApp.", msg:"Hello Henry, I am interested in the Volkswagen Golf 2023 TDI R-Line (grey) listed on your website. Please send its price and full details."},
+    {id:"fit", name:"Honda Fit (Jazz)", img:"img057.jpg", gallery:["img057.jpg","img058.jpg","img059.jpg"], alt:"Honda Fit compact hatchback", type:"hybrid", grade:"4 typical", years:"2013 – 2025", specs:["1.3L / 1.5L, hybrid e:HEV","Magic seats","Compact hatch"], engine:"1.3L / 1.5L petrol, or 1.5L e:HEV hybrid", trans:"CVT automatic", fuel:"Petrol / Hybrid", seats:"5", drive:"FWD or AWD", mileage:"Typically 30,000 – 110,000 km at auction", auctions:"USS · JU · CAA — everywhere, weekly", why:"Cheap to buy, cheap to run, easy to sell — a first-car favourite in Kenya and the Caribbean.", desc:"The do-everything hatchback: Magic Seats fold flat or flip up for tall loads, and the hybrid version returns Prius-like economy. Kenya buyers note: pick cars under the 8-year age rule with clean QISJ history.", msg:"Hello Henry, I am interested in a Honda Fit from Japanese auction. Please send available cars with grades and prices."},
+    {id:"fielder", name:"Toyota Corolla Fielder", img:"img060.jpg", gallery:["img060.jpg","img061.jpg"], alt:"Toyota Corolla Fielder hybrid wagon", type:"hybrid", grade:"4 / 4.5 typical", years:"2013 – 2025", specs:["1.5L hybrid wagon","Huge flat load bay","Dealer & family favourite"], engine:"1.5L petrol or 1.5L hybrid", trans:"CVT automatic", fuel:"Petrol / Hybrid", seats:"5", drive:"FWD or AWD", mileage:"Typically 40,000 – 130,000 km at auction", auctions:"TAA · USS · JU", why:"Kenya's wagon king — hybrid economy with a van-sized boot, loved by dealers and families.", desc:"If the Prius is the hybrid hatch, the Fielder is the hybrid workhorse — same proven 1.5 hybrid system under a long, flat wagon body. It is a fixture of Kenyan roads for a reason: cheap parts, known mechanics, strong resale.", msg:"Hello Henry, I am interested in a Toyota Corolla Fielder from Japanese auction. Please send available cars with grades and prices."},
+    {id:"nbox", name:"Honda N-BOX", img:"img062.jpg", gallery:["img062.jpg","img063.jpg","img064.jpg"], alt:"Honda N-BOX kei car in Japan", type:"work", grade:"4 / 4.5 typical", years:"2017 – 2025", specs:["660cc kei engine","Japan's best-selling car","Sliding doors"], engine:"660cc petrol, NA or turbo (kei class)", trans:"CVT automatic", fuel:"Petrol", seats:"4", drive:"FWD or AWD", mileage:"Typically 10,000 – 70,000 km at auction", auctions:"USS · JU — the biggest kei volumes in Japan", why:"Japan's No.1 selling car year after year — a tall, clever kei box that city buyers adore.", desc:"The N-BOX has topped Japan's sales charts for a decade: sliding rear doors, a lounge-like cabin and kei-car running costs. Custom trim adds alloys and the turbo engine. Perfect for island markets and city delivery work.", msg:"Hello Henry, I am interested in a Honda N-BOX from Japanese auction. Please send available cars with grades and prices."},
+    {id:"hiace", name:"Toyota Hiace Van", img:"img065.jpg", gallery:["img065.jpg","img066.jpg"], alt:"Toyota Hiace van in Japan", type:"work", grade:"3.5 / 4 typical", years:"2013 – 2025", specs:["2.8L diesel available","Cargo or commuter","The world workhorse"], engine:"2.7L petrol or 2.8L / 3.0L diesel", trans:"Automatic or manual", fuel:"Diesel / Petrol", seats:"3 – 14 by body type", drive:"RWD or 4WD", mileage:"Typically 60,000 – 180,000 km at auction", auctions:"ARAI · USS · truck & van sales", why:"The van that moves Africa and the Pacific — cargo, commuter or camper base, it never stops selling.", desc:"Every market knows the Hiace. Japanese examples are prized because vans at home work gentler lives than export-market ones. Super GL is the well-equipped trim; the 2.8 diesel (1GD) is the one to bid on for commercial buyers.", msg:"Hello Henry, I am interested in a Toyota Hiace van from Japanese auction. Please send available vans with grades and prices."},
+    {id:"carry", name:"Suzuki Carry Kei Truck", img:"img067.jpg", gallery:["img067.jpg","img068.jpg"], alt:"Suzuki Carry kei truck with a driver by a lake in Japan", type:"work", grade:"3.5 / 4 typical", years:"2013 – 2025", specs:["660cc kei engine","4WD available","Flat-bed workhorse"], engine:"660cc petrol (kei class)", trans:"5-speed manual or automatic", fuel:"Petrol", seats:"2", drive:"RWD or part-time 4WD", mileage:"Typically 20,000 – 90,000 km at auction", auctions:"ARAI · JU · regional kei sales", why:"Farmers and small businesses worldwide import these by the container — simple, tough, fixable anywhere.", desc:"The original kei truck: a full-width flat bed, fold-down sides and an engine any mechanic on earth can fix. 4WD KC grades suit farms and hills; clean low-km trucks sell out fast, so dealers order several at once for container loads.", msg:"Hello Henry, I am interested in Suzuki Carry kei trucks from Japanese auction. Please send available trucks with grades and prices."}
   ];
   function carById(id){ for(var i=0;i<CARS.length;i++){ if(CARS[i].id===id) return CARS[i]; } return null; }
   function carCard(c){
@@ -1154,7 +1349,15 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
   }
   document.addEventListener('click', function(e){
     var t = e.target.closest('[data-goto]');
-    if(t){ e.preventDefault(); goto(t.getAttribute('data-goto')); }
+    if(!t) return;
+    var inner = e.target.closest('a[href], button');
+    if(inner && inner !== t && !inner.hasAttribute('data-goto')) return;
+    e.preventDefault(); goto(t.getAttribute('data-goto'));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Enter') return;
+    var t = e.target.closest ? e.target.closest('[data-goto]') : null;
+    if(t && !/^(A|BUTTON)$/.test(t.tagName)){ e.preventDefault(); goto(t.getAttribute('data-goto')); }
   });
 
   /* ---------------- Reveal on scroll ---------------- */
@@ -1316,6 +1519,164 @@ table.spec td{padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
     var deep = carById(location.hash.slice(5));
     if(deep) openDetail(deep.id);
   }
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  var WA_BASE = "https://wa.me/923715130073?text=";
+  function navTo(id){
+    var b = document.querySelector('nav.main button[data-goto="' + id + '"]');
+    if(b) b.click();
+  }
+  function setField(id, v){
+    var el = document.getElementById(id);
+    if(el && v){ el.value = v; el.dispatchEvent(new Event('change', {bubbles:true})); }
+  }
+  function goDemand(country, port, model, type){
+    if(country) setField('dCountry', country);
+    if(port) setField('dPort', port);
+    if(model) setField('dModel', model);
+    if(type) setField('dType', type);
+    navTo('demand');
+    var form = document.getElementById('demandForm');
+    if(form){
+      setTimeout(function(){
+        form.scrollIntoView({behavior:'smooth', block:'start'});
+        form.classList.remove('flash'); void form.offsetWidth; form.classList.add('flash');
+      }, 80);
+    }
+  }
+
+  /* Scroll progress + back-to-top */
+  var prog = document.getElementById('scrollProgress');
+  var toTop = document.getElementById('toTop');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    if(prog) prog.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    if(toTop) toTop.classList.toggle('show', h.scrollTop > 650);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  if(toTop) toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  /* Stagger reveal delays inside grids */
+  document.querySelectorAll('.grid').forEach(function(g){
+    var kids = g.querySelectorAll(':scope > .reveal, :scope > * > .reveal');
+    kids.forEach(function(el, i){ el.style.transitionDelay = Math.min(i % 4, 3) * 70 + 'ms'; });
+    g.querySelectorAll(':scope > .reveal').forEach(function(el, i){ el.style.transitionDelay = Math.min(i % 4, 3) * 70 + 'ms'; });
+  });
+
+  /* Hero stats -> sensible pages */
+  var statTargets = ['auctions', 'auctions', 'company', 'data'];
+  document.querySelectorAll('.hero-stats > div').forEach(function(d, i){
+    if(statTargets[i]){ d.setAttribute('data-goto', statTargets[i]); d.setAttribute('tabindex', '0'); d.setAttribute('role', 'link'); }
+  });
+
+  /* Steps -> the page that matches each step */
+  var homeSteps = ['demand', 'howto', 'policies', 'policies'];
+  document.querySelectorAll('#page-home .steps .step').forEach(function(s, i){
+    if(homeSteps[i]){ s.setAttribute('data-goto', homeSteps[i]); s.setAttribute('tabindex', '0'); s.setAttribute('role', 'link'); }
+  });
+  var howSteps = ['demand', 'policies', 'cars', 'cars', 'policies', 'company'];
+  document.querySelectorAll('#page-howto .steps .step').forEach(function(s, i){
+    if(howSteps[i]){ s.setAttribute('data-goto', howSteps[i]); s.setAttribute('tabindex', '0'); s.setAttribute('role', 'link'); }
+  });
+
+  /* Marquee -> auctions */
+  var mq = document.querySelector('.marquee');
+  if(mq){ mq.setAttribute('title', 'See the auctions page'); mq.addEventListener('click', function(){ navTo('auctions'); }); }
+
+  /* Home country chips -> demand form prefilled */
+  document.querySelectorAll('#page-home .chip').forEach(function(ch){
+    if(ch.closest('.card')) return;
+    ch.classList.add('clickable'); ch.setAttribute('tabindex', '0'); ch.setAttribute('role', 'link');
+    function go(){
+      var parts = ch.textContent.split('—');
+      var country = (parts[0] || '').trim();
+      var port = (parts[1] || '').trim();
+      goDemand(country, port, '', '');
+    }
+    ch.addEventListener('click', go);
+    ch.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); go(); } });
+  });
+
+  /* Country guide cards (Market Data) -> demand form prefilled */
+  document.querySelectorAll('[data-country-card]').forEach(function(card){
+    function go(){ goDemand(card.getAttribute('data-country-card'), card.getAttribute('data-port'), '', ''); }
+    card.addEventListener('click', go);
+    card.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); go(); } });
+  });
+
+  /* Top-countries table rows -> demand form prefilled */
+  document.querySelectorAll('#page-data table.data tbody tr').forEach(function(tr){
+    var cells = tr.querySelectorAll('td');
+    if(cells.length < 3) return;
+    var country = cells[1].textContent.trim();
+    tr.classList.add('clickable-row');
+    tr.setAttribute('title', 'Ask Henry about shipping to ' + country);
+    tr.addEventListener('click', function(){ goDemand(country, '', '', ''); });
+  });
+
+  /* Auction cards -> demand + per-auction WhatsApp link */
+  document.querySelectorAll('#auctionGrid .card').forEach(function(card){
+    card.setAttribute('data-goto', 'demand'); card.setAttribute('tabindex', '0'); card.setAttribute('role', 'link');
+    var h = card.querySelector('h3');
+    var name = h ? h.textContent : 'this auction';
+    var p = document.createElement('p');
+    var a = document.createElement('a');
+    a.className = 'auction-link'; a.target = '_blank'; a.rel = 'noopener';
+    a.href = WA_BASE + encodeURIComponent('Hello Henry, please watch ' + name + ' for my car. My requirement is: ');
+    a.textContent = 'Ask Henry about ' + name + ' →';
+    p.appendChild(a); card.querySelector('.body').appendChild(p);
+  });
+
+  /* Policy cards -> whole card opens its WhatsApp question */
+  document.querySelectorAll('.policy-card').forEach(function(card){
+    var h = card.querySelector('h3');
+    var name = h ? h.textContent.replace(/^\s*\d+\s*/, '') : 'your policies';
+    var a = document.createElement('a');
+    a.className = 'policy-link'; a.target = '_blank'; a.rel = 'noopener';
+    a.href = WA_BASE + encodeURIComponent('Hello Henry, I have a question about your policy: ' + name);
+    a.textContent = 'Ask Henry about this policy →';
+    card.querySelector('.body').appendChild(a);
+    card.addEventListener('click', function(e){ if(!e.target.closest('a[href]')) a.click(); });
+  });
+
+  /* Contact / company rows: a row with a link is clickable as a whole */
+  document.querySelectorAll('.kv').forEach(function(kv){
+    var dts = kv.querySelectorAll('dt');
+    dts.forEach(function(dt){
+      var dd = dt.nextElementSibling;
+      if(!dd || dd.tagName !== 'DD') return;
+      var link = dd.querySelector('a[href]');
+      if(!link) return;
+      dt.classList.add('clickable'); dd.classList.add('clickable');
+      function go(e){ if(!e.target.closest('a[href]')) link.click(); }
+      dt.addEventListener('click', go); dd.addEventListener('click', go);
+    });
+  });
+
+  /* Popular-demand chips -> fill the demand form */
+  var popMap = [
+    {country:'Pakistan', model:'Toyota Aqua', type:'hybrid'},
+    {country:'Kenya', model:'Toyota Corolla Fielder', type:'hybrid'},
+    {country:'Tanzania', model:'Toyota Hiace', type:'work'},
+    {country:'UAE', model:'Toyota Land Cruiser 300', type:'suv'},
+    {country:'Mongolia', model:'Toyota Prius', type:'hybrid'},
+    {country:'United Kingdom', model:'Suzuki Jimny', type:'suv'}
+  ];
+  document.querySelectorAll('#page-demand .card').forEach(function(card){
+    var h = card.querySelector('h3');
+    if(!h || h.textContent.indexOf('Popular demands') === -1) return;
+    card.querySelectorAll('.chip').forEach(function(ch, i){
+      var m = popMap[i]; if(!m) return;
+      ch.classList.add('clickable'); ch.setAttribute('tabindex', '0'); ch.setAttribute('role', 'link');
+      function go(){ goDemand(m.country, '', m.model, m.type); }
+      ch.addEventListener('click', go);
+      ch.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); go(); } });
+    });
+  });
 })();
 </script>
 </body>
