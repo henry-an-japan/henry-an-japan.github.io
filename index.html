@@ -10,8 +10,20 @@
 <link rel="shortcut icon" type="image/png" href="img002.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="img003.png" />
 <meta name="theme-color" content="#101623" />
-<title>Henry AN Japan — Japanese Auction Cars, Exported Worldwide</title><meta property="og:type" content="website"><meta property="og:site_name" content="Henry AN Japan"><meta property="og:title" content="Henry AN Japan — Japanese Auction Cars, Exported Worldwide"><meta property="og:description" content="Licensed member of all major Japanese car auctions. Henry sources cars, trucks and machinery from 120+ auction venues and exports worldwide. WhatsApp +92 371 5130073."><meta property="og:url" content="https://henry-an-japan.github.io/"><meta property="og:image" content="https://henry-an-japan.github.io/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Henry AN Japan — Japanese Auction Cars, Exported Worldwide"><meta name="twitter:description" content="Licensed member of all major Japanese car auctions. Cars sourced to your demand and exported worldwide. WhatsApp +92 371 5130073."><meta name="twitter:image" content="https://henry-an-japan.github.io/og-image.png">
+<title>Henry AN Japan — Japanese Auction Cars, Exported Worldwide</title>
 <meta name="description" content="AN International Japan — licensed member of Japan's auto auctions. Henry sources cars, trucks and machinery from USS, TAA, CAA, JU, ARAI and 120+ auction venues and ships worldwide." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Henry AN Japan" />
+<meta property="og:title" content="Henry AN Japan — Japanese Auction Cars, Exported Worldwide" />
+<meta property="og:description" content="AN International Japan — licensed member of Japan's auto auctions. Henry sources cars, trucks and machinery from 120+ auction venues and ships worldwide. WhatsApp Henry: +92 371 5130073" />
+<meta property="og:url" content="https://henry-an-japan.github.io/" />
+<meta property="og:image" content="https://henry-an-japan.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Henry AN Japan — Japanese Auction Cars, Exported Worldwide" />
+<meta name="twitter:description" content="AN International Japan — licensed member of Japan's auto auctions. Henry sources cars, trucks and machinery from 120+ auction venues and ships worldwide. WhatsApp Henry: +92 371 5130073" />
+<meta name="twitter:image" content="https://henry-an-japan.github.io/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -361,7 +373,17 @@ header.site{background:linear-gradient(120deg,#0b1322,#182741 55%,#0b1322);borde
 .brand{gap:14px}
 .brand-tag{white-space:nowrap;line-height:1.15}
 .brand-tag small{display:block;white-space:nowrap}
-@media(max-width:1520px){header.site .wrap{flex-wrap:wrap}nav.main{order:3;width:100%;margin-left:0;padding-top:2px}}
+@media(min-width:861px){
+  /* Wide/laptop header fix: the logo + Henry tagline + 8-item nav + WhatsApp
+     button total more than the 1180px container, so on a single row the nav
+     squeezed over the tagline. Give the nav its own full-width row at every
+     desktop width; brand and WhatsApp share the top row cleanly. */
+  header.site .wrap{flex-wrap:wrap;row-gap:8px}
+  .brand{flex:0 1 auto;min-width:0;margin-right:auto}
+  .brand-tag{flex-shrink:1;min-width:0}
+  .wa-head{flex-shrink:0;margin-left:auto}
+  nav.main{order:3;flex:1 1 100%;width:100%;margin-left:0;padding-top:4px;flex-wrap:wrap}
+}
 .brand-logo{height:50px;width:auto;max-width:176px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.45));transition:transform .25s ease}
 .brand:hover .brand-logo{transform:scale(1.03)}
 .brand-tag{color:#e8eef8;font-family:"Barlow Condensed";font-size:1.02rem;letter-spacing:.04em;line-height:1.15;white-space:nowrap}
