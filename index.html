@@ -519,6 +519,54 @@ table.data tbody tr.clickable-row:hover td{background:rgba(200,16,46,.06)}
   .btn::after{display:none}
   .card,.btn,.step .num,.chip,.car-card img.ph{transition:none}
 }
+
+/* ================= v9 MOBILE FIX: one menu, no green strip, top ticker ================= */
+/* Hamburger toggle: hidden on desktop, shown only on mobile */
+.menu-toggle{display:none}
+.topbar-track{display:contents}
+.topbar-group{display:contents}
+.topbar-group--dup{display:none}
+.topbar-agent--text{display:none}
+
+@media(max-width:860px){
+  /* --- 3) Top details: ONE single scrolling line (ticker) --- */
+  .topbar{overflow:hidden;font-size:.82rem;line-height:1.3}
+  .topbar .wrap{display:block;max-width:none;padding:0;overflow:hidden}
+  .topbar-track{display:flex;width:max-content;animation:topTicker 32s linear infinite;will-change:transform}
+  .topbar-group{display:flex;align-items:center;white-space:nowrap;flex-shrink:0;padding:8px 10px 8px 16px}
+  .topbar-group span{white-space:nowrap}
+  .topbar-group .topbar-agent{margin-left:26px}
+  .topbar-group--dup{display:flex}
+  /* Ticker text is not a link on mobile (it scrolls off-screen by design);
+     the floating WhatsApp button is the mobile WhatsApp entry point. */
+  .topbar-agent--link{display:none}
+  .topbar-agent--text{display:inline}
+  @keyframes topTicker{to{transform:translateX(-50%)}}
+
+  /* --- 2) Remove the big green full-width WhatsApp strip on mobile --- */
+  .wa-head{display:none !important}
+
+  /* --- 1) ONE compact menu: hamburger button + dropdown panel --- */
+  header.site .wrap{flex-wrap:wrap;align-items:center}
+  .brand{flex:1 1 auto;min-width:0}
+  .menu-toggle{display:inline-flex;align-items:center;gap:9px;margin-left:auto;flex-shrink:0;background:var(--accent);color:#fff;border:1px solid rgba(255,255,255,.22);padding:10px 16px;border-radius:10px;font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;box-shadow:0 4px 14px rgba(200,16,46,.35);transition:transform .15s ease,background .2s ease}
+  .menu-toggle:active{transform:scale(.96)}
+  .menu-bars{display:inline-flex;flex-direction:column;gap:4px;flex-shrink:0}
+  .menu-bars span{display:block;width:20px;height:2.5px;background:#fff;border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+  .menu-toggle[aria-expanded="true"] .menu-bars span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] .menu-bars span:nth-child(2){opacity:0}
+  .menu-toggle[aria-expanded="true"] .menu-bars span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  nav.main{display:none;order:3;width:100%;flex:1 1 100%;margin-left:0;padding:8px 0 4px}
+  nav.main.open{display:flex;flex-direction:column;gap:6px;animation:menuIn .25s ease both}
+  @keyframes menuIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  nav.main button{width:100%;text-align:left;padding:12px 14px;font-size:1rem;line-height:1.25;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;color:#d7e1f0;white-space:normal}
+  nav.main button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+}
+@media (prefers-reduced-motion: reduce){
+  .topbar-track{animation:none}
+  nav.main.open{animation:none}
+  .menu-bars span{transition:none}
+}
 </style>
 </head>
 <body>
@@ -527,8 +575,17 @@ table.data tbody tr.clickable-row:hover td{background:rgba(200,16,46,.06)}
 
 <div class="topbar">
   <div class="wrap">
-    <span>Ichinomiya-shi, Aichi, Japan <span class="dot">•</span> Exporting since 2009 <span class="dot">•</span> Cars · Trucks · Heavy Machinery</span>
-    <span>Your agent: <a href="https://wa.me/923715130073" target="_blank" rel="noopener">Henry — WhatsApp +92 371 5130073</a></span>
+    <div class="topbar-track">
+      <div class="topbar-group">
+        <span>Ichinomiya-shi, Aichi, Japan <span class="dot">•</span> Exporting since 2009 <span class="dot">•</span> Cars · Trucks · Heavy Machinery</span>
+        <span class="topbar-agent topbar-agent--link">Your agent: <a href="https://wa.me/923715130073" target="_blank" rel="noopener">Henry — WhatsApp +92 371 5130073</a></span>
+        <span class="topbar-agent topbar-agent--text">Your agent: <span style="color:#fff;font-weight:600">Henry — WhatsApp +92 371 5130073</span></span>
+      </div>
+      <div class="topbar-group topbar-group--dup" aria-hidden="true">
+        <span>Ichinomiya-shi, Aichi, Japan <span class="dot">•</span> Exporting since 2009 <span class="dot">•</span> Cars · Trucks · Heavy Machinery</span>
+        <span class="topbar-agent">Your agent: <span style="color:#fff;font-weight:600">Henry — WhatsApp +92 371 5130073</span></span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -538,7 +595,8 @@ table.data tbody tr.clickable-row:hover td{background:rgba(200,16,46,.06)}
       <img class="brand-logo" src="img004.png" alt="AN International Japan — Trust and Quality" width="884" height="247" />
       <span class="brand-tag">Henry — your auction agent<small>Ichinomiya · Aichi · Japan</small></span>
     </a>
-    <nav class="main" aria-label="Pages">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu"><span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button>
+    <nav class="main" id="mainNav" aria-label="Pages">
       <button data-goto="home" class="active">Home</button>
       <button data-goto="cars">Cars</button>
       <button data-goto="auctions">Auctions</button>
@@ -1698,6 +1756,32 @@ table.data tbody tr.clickable-row:hover td{background:rgba(200,16,46,.06)}
       ch.addEventListener('click', go);
       ch.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); go(); } });
     });
+  });
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  /* Mobile: single hamburger menu — toggle panel, close on page pick / Escape / desktop resize */
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  if(!toggle || !nav) return;
+  function setOpen(open){
+    nav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  toggle.addEventListener('click', function(){
+    setOpen(!nav.classList.contains('open'));
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.closest('button')) setOpen(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && nav.classList.contains('open')){ setOpen(false); toggle.focus(); }
+  });
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 860) setOpen(false);
   });
 })();
 </script>
